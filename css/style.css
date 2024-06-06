@@ -1,0 +1,143 @@
+* { 
+  padding: 0;  
+  margin: 0;  
+  box-sizing: border-box; 
+  font-family: Arial, sans-serif;
+}
+a {
+  text-decoration: none; 
+  color: #333;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e9ffea;
+}
+
+header {
+  /* TITLE BAR COLOR */
+  background-color: #ffffff;
+  color: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+div.container-login {
+  padding: 50px;
+  max-width: 900px;
+  margin: auto; /* Center horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center vertically and horizontally */
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  background-color: #afffbc;
+}
+
+div.container-login label{
+  display: block;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+div.container-login input{
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+  border: 2px;
+  font-size: 15px;
+  padding: 10px;
+}
+
+div.loginButtonContainer{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+div.loginButtonContainer button{
+  width: 200px;
+  font-size: 20px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  background-color: #008b35;
+  color: #fff;
+  border: 0px;
+}
+
+div.container-login nav {
+  text-align: center;
+}
+
+div.container-register {
+
+  padding: 50px;
+  max-width: 900px;
+  margin: auto; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  background-color: #afffbc;  
+}
+
+div.container-register nav{
+  
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+div.container-register label{
+  display: block;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  
+}
+
+div.container-register input{
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+  border: 2px;
+  font-size: 15px;
+  padding: 10px;
+}
+
+div.container-register select{
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+  border: 2px;
+  font-size: 15px;
+  padding: 0px;
+}
+
+div#errorMessage{
+  background: rgb(255, 0, 0);
+  text-align: center;
+  font-size: 15px;
+  padding: 1px;
+  margin: 0px;
+}
+
