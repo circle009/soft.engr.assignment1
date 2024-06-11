@@ -17,12 +17,7 @@
             <h1>Fitness App</h1>
          </header>
       
-         <nav>
-            <a href="Dashboard.php"></i>   Home</a>
-            <a href="EditProfile.php"></i> Edit Profile</a>
-            <a href="database/logout.php"></i>  Logout</a>
-
-         </nav>
+         <?php include('partials/menubar.php') ?>
 
             
       </body>

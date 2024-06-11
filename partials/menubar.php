@@ -1,6 +1,6 @@
 <nav>
-   <a href="Dashboard.php"><i class="fa fa fa-home"></i>   Home</a>
-   <a href="EditProfile.php"><i class="fa fa-pencil-square-o"></i> Edit Profile</a>
-   <a href="database/logout.php"><i class="fa fa fa-sign-out"></i>  Logout</a>
+            <a href="Dashboard.php"></i>  Dashboard</a>
+            <a href="Meal.php"></i>       Meal</a>
+            <a href="Settings.php"></i>   Settings</a>
 
-</nav>
+         </nav>
