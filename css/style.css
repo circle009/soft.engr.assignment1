@@ -141,3 +141,17 @@ div#errorMessage{
   margin: 0px;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #4300d4;
+}
+nav a {
+  color: #ffffff; /* Adjust color as needed */
+  text-decoration: none;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+nav a:nth-child(3) { /* Target the third link */
+  margin-left: auto; /* Pushes the third link to the right */
+}
