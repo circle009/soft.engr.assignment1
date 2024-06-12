@@ -19,3 +19,14 @@ CREATE TABLE user (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+// 2nd database table for foodlist
+CREATE TABLE food_list (
+    foodID INT PRIMARY KEY AUTO_INCREMENT,
+    food VARCHAR(100) NOT NULL,
+    servingSize VARCHAR(50),
+    calories INT,
+    Carbohydrates DECIMAL(5, 2),
+    Protein DECIMAL(5, 2),
+    Fat DECIMAL(5, 2)
+);
