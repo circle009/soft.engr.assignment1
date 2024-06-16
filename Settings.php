@@ -22,7 +22,7 @@
          
          <div class="container">
             <div class="container1">
-               <a href="Dashboard.php"></i>  Edit User Info</a>
+               <a href="updateuserinfo.php"></i>  Edit User Info</a>
             </div>
             <div class="container1">
                <a href="Meal.php"></i>       Edit Meal Info</a>
