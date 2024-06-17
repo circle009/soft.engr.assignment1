@@ -40,12 +40,12 @@ if (isset($_POST['logout'])) {
                <a href="Meal.php"></i>       Edit Meal Info</a>
             </div>
             <div class="container1">
-               <a href="Settings.php"></i>   Add New Meal</a>
+               <a href="addnewmeal.php"></i>   Add New Meal</a>
             </div>
             <div class="container1">
             <!-- Logout Form -->
             <form action="database/logout.php" method="POST">
-                <button type="submit" name="logout">Logout</button>
+                <button type="submit" name="logout" class="transparent-button">Logout</button>
             </form>
         </div> 
          </div>

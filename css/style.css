@@ -262,3 +262,39 @@ div.container-mid{
 .welcome-header {
   margin-bottom: 20px;
 }
+.transparent-button {
+  background-color: transparent; /* Make background transparent */
+  border: none; /* Remove border */
+  color: inherit; /* Inherit text color from parent */
+  font-size: inherit; /* Inherit font size from parent */
+  cursor: pointer; /* Change cursor to pointer when hovering */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  outline: none; /* Remove outline on focus */
+}
+
+.transparent-button:hover {
+  color: #007BFF; /* Change text color on hover (optional) */
+}
+.input-container {
+  margin-bottom: 15px; /* Add space between input containers */
+}
+
+.input-box {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Make the input fields full width */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+/* Optional: Add hover and focus effects for better user experience */
+.input-box:hover {
+  border-color: #888;
+}
+
+.input-box:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
