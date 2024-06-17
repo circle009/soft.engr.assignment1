@@ -238,7 +238,7 @@ div.container-mid{
   
 }
 
-div.container-summary {
+.container-summary {
   padding: 50px;
   width: 1000px;
   margin: auto; /* Center horizontally */
@@ -248,14 +248,17 @@ div.container-summary {
   background-color: #afffbc;
 }
 
-div.pbar-border {
+.pbar-border {
   background-color: white;
   width: 100%;
   height:24px;
   margin-bottom: 10px;
 }
 
-div.pbar-fill {
-  background-color: red !important;
+.pbar-fill {
   height: 100%;
+}
+
+.welcome-header {
+  margin-bottom: 20px;
 }
