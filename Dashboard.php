@@ -22,9 +22,27 @@
          <div class="container-summary">
             <p>Welcome back!</p>
 
+            <p><b>Weekly Goal</b></p>
             <div class="pbar-border">
                <div class="pbar-fill" style="width:20%"></div>
             </div>
+            <p><b>Daily Goal</b></p>
+            <div class="pbar-border">
+               <div class="pbar-fill" style="width:20%"></div>
+            </div>
+            <p><b>Calories</b></p>
+            <div class="pbar-border">
+               <div class="pbar-fill" style="width:20%"></div>
+            </div>
+            <p><b>Carbs</b></p>
+            <div class="pbar-border">
+               <div class="pbar-fill" style="width:20%"></div>
+            </div>
+            <p><b>Protein</b></p>
+            <div class="pbar-border">
+               <div class="pbar-fill" style="width:20%"></div>
+            </div>
+            <p><b>Fat</b></p>
             <div class="pbar-border">
                <div class="pbar-fill" style="width:20%"></div>
             </div>
