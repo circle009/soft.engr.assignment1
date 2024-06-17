@@ -303,3 +303,15 @@ INSERT INTO food_list (food, servingSize, calories, Carbohydrates, Protein, Fat)
 ('Vegetable Frittata', '1 serving', 250, 10, 20, 15),
 ('Chicken Tikka Wrap', '1 wrap', 350, 30, 25, 18)
 
+
+//3rd TABLE meal
+
+CREATE TABLE meal (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    account_ID INT,
+    foodID INT,
+    meal VARCHAR(100),
+    meal_date DATE,
+    FOREIGN KEY (account_id) REFERENCES user(account_id),
+    FOREIGN KEY (foodID) REFERENCES food_list(foodID)
+);
