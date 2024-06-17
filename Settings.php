@@ -1,9 +1,21 @@
 <?php
-   session_start();
-   // if(!isset($_SESSION['user'])) header('location: Login.php');
-   // 
+session_start();
 
+// Redirect to login page if user is not logged in
+if (!isset($_SESSION['user'])) {
+    header('Location: Login.php');
+    exit();
+}
+
+// Logout logic
+if (isset($_POST['logout'])) {
+    session_unset(); // Unset all session variables
+    session_destroy(); // Destroy the session
+    header('Location: Login.php'); // Redirect to login page after logout
+    exit();
+}
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -22,7 +34,7 @@
 
          <div class="container-settings">
             <div class="container1">
-               <a href="Dashboard.php"></i>  Edit User Info</a>
+               <a href="updateuserinfo.php"></i>  Edit User Info</a>
             </div>
             <div class="container1">
                <a href="Meal.php"></i>       Edit Meal Info</a>
@@ -30,9 +42,12 @@
             <div class="container1">
                <a href="Settings.php"></i>   Add New Meal</a>
             </div>
-            <div class="container1">      
-               <a href="Settings.php"></i>   Logout</a>
-            </div>   
+            <div class="container1">
+            <!-- Logout Form -->
+            <form action="database/logout.php" method="POST">
+                <button type="submit" name="logout">Logout</button>
+            </form>
+        </div> 
          </div>
          
             
