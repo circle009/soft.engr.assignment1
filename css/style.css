@@ -143,7 +143,8 @@ div#errorMessage{
 
 nav {
   text-align: center;
-  background-color: #4300d4;
+  background-color: #00d447;
+  padding: 10px;
 }
 
 nav a {
@@ -154,19 +155,33 @@ nav a {
   font-size: 20px;
 }
 
-.container{
-  padding: 50px;
-  max-width: 900px;
-  margin: auto; /* Center horizontally */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+
+div.container{
+  background-color: #aeffca;
+  display: flex;
+}
+
+div.container-settings{
+  /* background-color: #aeffca; */
+  padding: 20px;
+  max-width: max-content;
+  margin: auto; 
+  /* position: absolute; */
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%);  */
+  
+  /* border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  display: block;
+  flex-direction: row;
+  
 }
 
 .container1 {
   text-align: center;
-  width: 300px; /* Adjust as needed */
+  width: 500px; /* Adjust as needed */
 
   background-color: #ffffff;
   border-radius: 5px;
@@ -176,14 +191,49 @@ nav a {
   font-weight: bold;
 }
 
+div.container-side{
+  padding: 50px;
+  max-width: max-content;
+  background-color: #008b35;
+}
 .container2 {
   text-align: left;
-  width: 300px; /* Adjust as needed */
+  width: 500px; /* Adjust as needed */
 
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   
   padding: 20px;
   margin: 20px;
   font-weight: bold;
+
+}
+
+.container2 a {
+  color: #000000; /* Adjust color as needed */
+  text-decoration: none;
+  padding: 10px 30px;
+  text-decoration: none;
+}
+.container2 a:nth-child(2) { /* Target the third link */
+  margin-left: auto; /* Pushes the third link to the right */
+}
+
+div.container-mid{
+  padding: 50px;
+  max-width: 100%;
+  background-color: #000;
+}
+
+.container-mid table{
+  border-collapse: collapse;
+  margin: 20px;
+  background-color: #fff;
+  
+}
+.container-mid th, .container-mid td {
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  text-align: left;
+  
 }

@@ -33,30 +33,7 @@
          <?php include('partials/menubar.php') ?>
 
          <div class="container">
-            <div class="container-side">
-               <div class="container2">
-                  <a href="">Today</a>
-               </div>
-               <div class="container2">
-                  <a>Calories Remaining</a>
-                  <a>Calories Remaining</a>
-                  <a><br></a>
-                  <a>Calories Consumed</a>
-                  <a>Calories Remaining</a>            
-               </div>
-               <div class="container2">
-                  <a href=""> Breakfast</a>
-               </div>
-               <div class="container2">      
-                  <a href=""> Lunch</a>
-               </div> 
-               <div class="container2">      
-                  <a href=""> Dinner</a>
-               </div>   
-               <div class="container2">      
-                  <a href=""> Snack / Others</a>
-               </div>            
-            </div>
+            
             <div class="container-mid">
                <table>
                   <thead>

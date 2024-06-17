@@ -19,8 +19,8 @@
       
          <?php include('partials/menubar.php') ?>
 
-         
-         <div class="container">
+
+         <div class="container-settings">
             <div class="container1">
                <a href="Dashboard.php"></i>  Edit User Info</a>
             </div>
