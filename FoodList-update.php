@@ -78,7 +78,7 @@
          
       <script>
          function navigateToCourseInformation(row) {
-            const url = `Dashboard.php`;
+            const url = `FoodList.php?`;
 
                 // Navigate to the new page
                 window.location.href = url;
