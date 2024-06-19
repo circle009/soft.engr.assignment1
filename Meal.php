@@ -62,10 +62,12 @@
                   <?php
                      $total = 0;  // Initialize total to 0
                      foreach ($meal as $meals):
-                        $total += $meals['calories'];  // Add the calories of each meal to the total
-                        echo $total;  // Display the calories for each meal
+                        $total += $meals['calories']+0;  // Add the calories of each meal to the total
+                          // Display the calories for each meal
                      endforeach;
+                     echo $total;
                      ?>
+                     
                   </a>            
                </div>
                <div class="container2">

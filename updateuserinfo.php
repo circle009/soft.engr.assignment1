@@ -62,6 +62,8 @@ try {
         <h1>Fitness App</h1>
     </header>
 
+    
+
     <div class="container-register">
         <form action="database/update.php" method="POST">
             <nav>

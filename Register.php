@@ -61,7 +61,7 @@
                   </div>
                   
                   <div class="loginButtonContainer">
-                     <button>login</button>
+                     <button>Register</button>
                   </div>
                </form>        
 
