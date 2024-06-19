@@ -3,7 +3,7 @@
    // if(!isset($_SESSION['user'])) header('location: Login.php');
    // 
 
-   $user = $_SESSION['user'];
+   // $user = $_SESSION['user'];
    
    include('database/connection.php');
 
@@ -35,12 +35,22 @@
          <div class="container">
             
             <div class="container-mid">
+               
+               
+               <!-- <label for="">Search</label> -->
+               <input type="text" placeholder="Search"  name="username"/>
+               
+
                <table>
                   <thead>
                      <tr>
                         <th>No.</th>
                         <th>Food Name</th>
+                        <th>Serving Size</th>
                         <th>Calories</th>
+                        <th>Carbs</th>
+                        <th>Proteins</th>
+                        <th>Fats</th>
                      </tr>
                   </thead>
                   <tbody>
@@ -51,7 +61,11 @@
                         <tr>
                            <td><?= $counter ?></td>
                            <td><?= $foodlists['food'] ?></td>
+                           <td><?= $foodlists['servingSize'] ?></td>
                            <td><?= $foodlists['calories'] ?></td>
+                           <td><?= $foodlists['Carbohydrates'] ?></td>
+                           <td><?= $foodlists['Protein'] ?></td>
+                           <td><?= $foodlists['Fat'] ?></td>
                         </tr>
                      <?php $counter++; // Increment the counter
                         endforeach;

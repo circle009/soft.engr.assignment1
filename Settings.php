@@ -44,9 +44,12 @@ if (isset($_POST['logout'])) {
             </div>
             <div class="container1">
             <!-- Logout Form -->
-            <form action="database/logout.php" method="POST">
-                <button type="submit" name="logout">Logout</button>
-            </form>
+            <!-- <form action="database/logout.php" method="POST"> -->
+              
+               <a href="database/logout.php"></i>   Logout</a>
+            
+            <!-- <button type="submit" name="logout">Logout</button> -->
+            <!-- </form> -->
         </div> 
          </div>
          
