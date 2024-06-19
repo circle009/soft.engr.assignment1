@@ -37,7 +37,7 @@ if (isset($_POST['logout'])) {
                <a href="updateuserinfo.php"></i>  Edit User Info</a>
             </div>
             <div class="container1">
-               <a href="Meal.php"></i>       Edit Meal Info</a>
+               <a href="FoodList-update.php"></i>       Edit Meal Info</a>
             </div>
             <div class="container1">
                <a href="addnewmeal.php"></i>   Add New Meal</a>
