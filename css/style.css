@@ -264,30 +264,63 @@ div.container-mid input{
   
 }
 
-div.container-summary {
+.container-summary {
   padding: 50px;
   width: 1000px;
   margin: auto; /* Center horizontally */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Center vertically and horizontally */
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #afffbc;
 }
 
-div.pbar-border {
+.pbar-border {
   background-color: white;
   width: 100%;
   height:24px;
+  margin-bottom: 10px;
 }
 
-div.pbar-fill {
-  background-color: red !important;
+.pbar-fill {
   height: 100%;
 }
 
+.welcome-header {
+  margin-bottom: 20px;
+}
+.transparent-button {
+  background-color: transparent; /* Make background transparent */
+  border: none; /* Remove border */
+  color: inherit; /* Inherit text color from parent */
+  font-size: inherit; /* Inherit font size from parent */
+  cursor: pointer; /* Change cursor to pointer when hovering */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  outline: none; /* Remove outline on focus */
+}
 
+.transparent-button:hover {
+  color: #007BFF; /* Change text color on hover (optional) */
+}
+.input-container {
+  margin-bottom: 15px; /* Add space between input containers */
+}
 
+.input-box {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Make the input fields full width */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+/* Optional: Add hover and focus effects for better user experience */
+.input-box:hover {
+  border-color: #888;
+}
+
+.input-box:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
