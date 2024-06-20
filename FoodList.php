@@ -46,8 +46,8 @@
                
                
                <label id="meal"><?= $meal ?></label>
-               <input type="text" placeholder="Search"  name="username"/>
-               
+               <input type="text" id="search" placeholder="Search by Food Name" />
+
 
                <table>
                   <thead>
@@ -116,7 +116,19 @@
             window.location.href = url;
       
          }
-         
+         document.getElementById('search').addEventListener('input', function() {
+            const searchText = this.value.toLowerCase().trim();
+            const rows = document.querySelectorAll('#foodTable tbody tr');
+
+            rows.forEach(row => {
+                const foodName = row.children[1].innerText.toLowerCase();
+                if (foodName.includes(searchText)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
       </script>
 
       </body>

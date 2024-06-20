@@ -2,7 +2,9 @@
    session_start();
    // if(!isset($_SESSION['user'])) header('location: Login.php');
    // 
-
+   $user = $_SESSION['user'];
+   $fullname = $user['fullname'];
+   // print_r($fullname);
 ?>
 
 <!DOCTYPE html>

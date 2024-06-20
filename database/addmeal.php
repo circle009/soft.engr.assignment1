@@ -7,24 +7,24 @@
    }
    
    $account = $user['account_id'];
-   $ADDfood =        getParam('ADDfood');
-   $ADDservingsize = getParam('ADDservingsize');
-   $ADDcalories =    getParam('ADDcalories');
-   $ADDcarbs =       getParam('ADDcarbs');
-   $ADDprotein =     getParam('ADDprotein');
-   $ADDfat =         getParam('ADDfat');
-   $ADDmeal =        getParam('ADDmeal');
-   $ADDdate =        getParam('ADDdate');
+   $food =        getParam('food');
+   $servingSize = getParam('servingSize');
+   $calories =    getParam('calories');
+   $carbs =       getParam('carbs');
+   $protein =     getParam('protein');
+   $fat =         getParam('fat');
+   $meal =        getParam('meal');
+   $date =        getParam('date');
 
    // print_r($account); print_r('<br>');
-   // print_r($ADDfood); print_r('<br>');
-   // print_r($ADDservingsize); print_r('<br>');
-   // print_r($ADDcalories); print_r('<br>');
-   // print_r($ADDcarbs); print_r('<br>');
-   // print_r($ADDprotein); print_r('<br>');
-   // print_r($ADDfat); print_r('<br>');
-   // print_r($ADDmeal); print_r('<br>');
-   // print_r($ADDdate); print_r('<br>');
+   // print_r($food); print_r('<br>');
+   // print_r($servingSize); print_r('<br>');
+   // print_r($calories); print_r('<br>');
+   // print_r($carbs); print_r('<br>');
+   // print_r($protein); print_r('<br>');
+   // print_r($fat); print_r('<br>');
+   // print_r($meal); print_r('<br>');
+   // print_r($date); print_r('<br>');
    
 
    //ADD RECORD
@@ -34,9 +34,9 @@
     INSERT INTO meal (account_ID, foodID, meal, meal_date)
     VALUES (
         :account_ID,
-        (SELECT foodID FROM food_list WHERE food = :ADDfood),
-        :ADDmeal,
-        :ADDdate
+        (SELECT foodID FROM food_list WHERE food = :food),
+        :meal,
+        :date
     )
 ";
 
@@ -46,9 +46,9 @@ try {
 
     // Bind parameters
     $stmt->bindValue(':account_ID', $account, PDO::PARAM_STR);
-    $stmt->bindValue(':ADDfood', $ADDfood, PDO::PARAM_STR);
-    $stmt->bindValue(':ADDmeal', $ADDmeal, PDO::PARAM_STR);
-    $stmt->bindValue(':ADDdate', $ADDdate, PDO::PARAM_STR);
+    $stmt->bindValue(':food', $food, PDO::PARAM_STR);
+    $stmt->bindValue(':meal', $meal, PDO::PARAM_STR);
+    $stmt->bindValue(':date', $date, PDO::PARAM_STR);
 
     // Execute the statement
     $stmt->execute();

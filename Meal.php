@@ -14,7 +14,7 @@
    $query = "
         SELECT * FROM meal
         LEFT JOIN food_list ON  food_list.foodID = meal.foodID
-        WHERE meal.account_ID = $userlog 
+        WHERE meal.account_ID = $userlog
         ";
 
    $stmt = $conn->prepare($query);
@@ -159,10 +159,10 @@
                function updateLinks() {
                   const date = datePicker.value;
                   if (date) {
-                     breakfastLink.href = `FoodList.php?meal=Breakfast&date=${encodeURIComponent(date)}`;
-                     lunchLink.href = `FoodList.php?meal=Lunch&date=${encodeURIComponent(date)}`;
-                     dinnerLink.href = `FoodList.php?meal=Dinner&date=${encodeURIComponent(date)}`;
-                     snackLink.href = `FoodList.php?meal=Snack / Others&date=${encodeURIComponent(date)}`;
+                     breakfastLink.href =    `FoodList2.php?meal=Breakfast&date=${encodeURIComponent(date)}`;
+                     lunchLink.href =        `FoodList2.php?meal=Lunch&date=${encodeURIComponent(date)}`;
+                     dinnerLink.href =       `FoodList2.php?meal=Dinner&date=${encodeURIComponent(date)}`;
+                     snackLink.href =        `FoodList2.php?meal=Snack / Others&date=${encodeURIComponent(date)}`;
                   } else {
                      
                   }
