@@ -1,3 +1,4 @@
+https://docs.google.com/document/d/1ImgQPVDNXBcvcPrrdEHTxSvsNMnHMURcYrelmvaxOvY/edit?usp=sharing
 
 im using xampp as a server, downloard here: https://www.apachefriends.org/
 
