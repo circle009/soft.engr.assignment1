@@ -158,8 +158,10 @@ nav a {
 
 
 div.container{
-  background-color: #aeffca;
+  /* background-color: #aeffca; */
   display: flex;
+  max-width: max-content;
+  margin: auto; 
 }
 
 div.container-settings{
@@ -192,9 +194,9 @@ div.container-settings{
 }
 
 div.container-side{
-  padding: 50px;
+  padding: 50px 10px;
   max-width: max-content;
-  background-color: #008b35;
+  /* background-color: #008b35; */
 }
 .container2 {
   text-align: left;
@@ -228,13 +230,19 @@ div.container-side{
   text-decoration: none;
 }
 .container2 a:nth-child(2) { /* Target the third link */
-  margin-left: auto; /* Pushes the third link to the right */
+  margin-left: 50px; /* Pushes the third link to the right */
+}
+.container2 a:nth-child(3) { /* Target the third link */
+  margin-right: auto; /* Pushes the third link to the right */
+}
+.container2 a:nth-child(4) { /* Target the third link */
+  margin-right: 50px; /* Pushes the third link to the right */
 }
 
 div.container-mid{
-  padding: 50px;
+  padding: 50px 10px;
   max-width: 100%;
-  background-color: #7a7a7a;
+  /* background-color: #7a7a7a; */
 }
 
 div.container-mid label{
@@ -247,7 +255,7 @@ div.container-mid input{
   color: #000;
   margin-left: 20px;
   padding: 5px;
-  width: 500px;
+  width: 300px;
   border-radius: 5px;
 }
 
@@ -255,13 +263,21 @@ div.container-mid input{
   border-collapse: collapse;
   margin: 20px;
   background-color: #fff;
-  
+  width: 500px;
 }
 .container-mid th, .container-mid td {
   border: 1px solid #ddd;
   padding: 10px 20px;
   text-align: left;
-  
+}
+.container-mid button {
+  width: 80px;
+  font-size: 20px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  background-color: #008b35;
+  color: #fff;
+  border: 0px;
 }
 
 .container-summary {
@@ -324,3 +340,13 @@ div.container-mid input{
   outline: none;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
+
+
+h3{
+  text-align: center;
+  margin-bottom: 30px;
+}
+h4{
+  text-align: center;
+}
+

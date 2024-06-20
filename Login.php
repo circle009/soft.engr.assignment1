@@ -65,9 +65,11 @@
                         <div class="loginButtonContainer">
                               <button>login</button>
                         </div>
-                        <nav>
-                              <a href="Register.php">Create new account</a>
-                        </nav>
+                        <!-- <nav> -->
+                              <h4>
+                                    <a href="Register.php">Create new account</a>
+                              </h4>
+                        <!-- </nav> -->
                   </form> 
                   
                   

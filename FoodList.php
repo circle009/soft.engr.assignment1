@@ -4,18 +4,26 @@
    // 
 
    // $user = $_SESSION['user'];
-   
+   if (isset($_GET['meal'])) {
+      $meal = $_GET['meal'];
+      $date = $_GET['date'];
+      
+   } else{
+      header('location: Meal.php');
+   }
    include('database/connection.php');
 
    $query = "
-        SELECT * FROM food_list";
+        SELECT * FROM food_list
+        ORDER BY food ASC
+        ";
 
    $stmt = $conn->prepare($query);
    $stmt->execute();
    $foodlist = $stmt->fetchAll(PDO::FETCH_ASSOC);
    $_SESSION['foodlist'] = $foodlist;
-
-
+   
+   
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +45,7 @@
             <div class="container-mid">
                
                
-               <!-- <label for="">Search</label> -->
+               <label id="meal"><?= $meal ?></label>
                <input type="text" placeholder="Search"  name="username"/>
                
 
@@ -66,6 +74,8 @@
                            <td><?= $foodlists['Carbohydrates'] ?></td>
                            <td><?= $foodlists['Protein'] ?></td>
                            <td><?= $foodlists['Fat'] ?></td>
+                           <td hidden><?= $meal ?></td>
+                           <td hidden><?= $date ?></td>
                         </tr>
                      <?php $counter++; // Increment the counter
                         endforeach;
@@ -78,11 +88,35 @@
          
       <script>
          function navigateToCourseInformation(row) {
-            const url = `Dashboard.php`;
+         //    const url = `Dashboard.php`;
 
-                // Navigate to the new page
-                window.location.href = url;
+         //        // Navigate to the new page
+         //        window.location.href = url;
+
+            const cells = row.getElementsByTagName('td');
+            const tdValue1 = cells[1].innerText.trim(); // foodname
+            const tdValue2 = cells[2].innerText.trim(); // serving size
+            const tdValue3 = cells[3].innerText.trim(); // calories
+            const tdValue4 = cells[4].innerText.trim(); // carbs
+            const tdValue5 = cells[5].innerText.trim(); // protein
+            const tdValue6 = cells[6].innerText.trim(); // fat
+            const tdValue7 = cells[7].innerText.trim(); // meal
+            const tdValue8 = cells[8].innerText.trim(); // date 
+
+            const url = `database/addmeal.php?
+                        ADDfood=${encodeURIComponent(tdValue1)}
+                        &ADDservingsize=${encodeURIComponent(tdValue2)}
+                        &ADDcalories=${encodeURIComponent(tdValue3)}
+                        &ADDcarbs=${encodeURIComponent(tdValue4)}
+                        &ADDprotein=${encodeURIComponent(tdValue5)}
+                        &ADDfat=${encodeURIComponent(tdValue6)}
+                        &ADDmeal=${encodeURIComponent(tdValue7)}
+                        &ADDdate=${encodeURIComponent(tdValue8)}   
+                        `;
+            window.location.href = url;
+      
          }
+         
       </script>
 
       </body>

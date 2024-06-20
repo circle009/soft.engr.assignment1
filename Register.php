@@ -26,9 +26,9 @@
 
             <div class="container-register">
                <form action="database/add.php" method="POST">
-                  <nav>
+                  <h3>
                      <a>Register</a>
-                  </nav>
+                  </h3>
                   <div class="registerInputsContainer">
                      <label for="">Username</label>
                      <input type="text" placeholder="username"  name="username"/>
