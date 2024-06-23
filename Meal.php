@@ -149,7 +149,15 @@
             document.getElementById('dinnerLink').addEventListener('click', handleLinkClick);
             document.getElementById('snackLink').addEventListener('click', handleLinkClick);
             
-            
+            const datePicker = document.getElementById('datePicker');
+
+        // Add an event listener for the 'change' event
+        datePicker.addEventListener('change', function() {
+            // Get the value of the date picker
+            const selectedDate = datePicker.value;
+            // Perform an action with the selected date
+            console.log('Selected date:', selectedDate);
+        });
  
          </script>
       </body>
