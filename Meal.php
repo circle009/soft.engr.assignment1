@@ -8,13 +8,12 @@
    include('database/connection.php');
 
    $userlog = $user['account_id'];
-   
-
+   $datepicked = date('Y-m-d');
    
    $query = "
-        SELECT * FROM meal
-        LEFT JOIN food_list ON  food_list.foodID = meal.foodID
-        WHERE meal.account_ID = $userlog
+         SELECT * FROM meal
+         LEFT JOIN food_list ON food_list.foodID = meal.foodID
+         WHERE meal.account_ID = '$userlog' AND meal_date = '$datepicked'
         ";
 
    $stmt = $conn->prepare($query);
@@ -22,7 +21,7 @@
    $meal = $stmt->fetchAll(PDO::FETCH_ASSOC);
    $_SESSION['foodlist'] = $meal;
 
-   
+
   
 
 ?>
@@ -86,9 +85,11 @@
 
 
             <div class="container-mid">
-
+               
                <div class="container2" id="container2">
+                  <form id="dateForm" action="" method="POST">
                      <input type="date" id="datePicker" name="datePicker">
+                  </form>   
                </div>
                <!-- <a>adasda</a> -->
                <table>
@@ -96,7 +97,8 @@
                      <tr>
                         <th>No.</th>
                         <th>Food Name</th>
-                        <th>Calories</th>
+                        <th>Meal Type</th>
+                        <th>Calories</th>                        
                      </tr>
                   </thead>
                   <tbody>
@@ -107,7 +109,8 @@
                         <tr>
                            <td><?= $counter ?></td>
                            <td><?= $meals['food'] ?></td>
-                           <td><?= $meals['calories'] ?></td>
+                           <td><?= $meals['meal'] ?></td>
+                           <td><?= $meals['calories'] ?></td>                           
                         </tr>
                      <?php $counter++; // Increment the counter
                         endforeach;
@@ -121,59 +124,33 @@
          
 
          <script>
+            // Get today's date in yyyy-mm-dd format
+            const today = new Date().toISOString().split('T')[0];
+            // Set the value of the date input to today's date
+            document.getElementById('datePicker').value = today;
 
-            
-            function getTodayDate() {
-               var today = new Date();
-               var year = today.getFullYear();
-               var month = ('0' + (today.getMonth() + 1)).slice(-2);
-               var day = ('0' + today.getDate()).slice(-2);
-               return year + '-' + month + '-' + day;
+            // Function to handle click events and get date value
+            function handleLinkClick(event) {
+               event.preventDefault(); // Prevent the default link behavior
+               const dateValue = document.getElementById('datePicker').value;
+
+               // Update the href attribute of the clicked link
+               const clickedLink = event.target;
+               const meal = clickedLink.textContent;
+               clickedLink.href = `FoodList2.php?meal=${encodeURIComponent(meal)}&date=${encodeURIComponent(dateValue)}`;
+               
+               // Navigate to the updated link
+               window.location.href = clickedLink.href;
             }
 
-            // Set initial value of the date picker to today's date
-               document.addEventListener("DOMContentLoaded", function() {
-                  var datePicker = document.getElementById("datePicker");
-                  datePicker.value = getTodayDate();
-                  document.getElementById("datePicker2").value = getTodayDate();
-
-                  // Add event listener to copy the value when the date is changed
-                  datePicker.addEventListener("change", function() {
-                     var selectedDate = datePicker.value;
-                     document.getElementById("datePicker2").value = selectedDate;
-                  });
-
-                  // // Optional: Handle click on the container to focus the date picker
-                  // document.getElementById("container2").addEventListener("click", function() {
-                  //    datePicker.focus(); // Automatically focus the date picker
-                  // });
-            });
-
-            document.addEventListener("DOMContentLoaded", function() {
-               const datePicker = document.getElementById("datePicker");
-               const breakfastLink = document.getElementById("breakfastLink");
-               const lunchLink = document.getElementById("lunchLink");
-               const dinnerLink = document.getElementById("dinnerLink");
-               const snackLink = document.getElementById("snackLink");
-
-               function updateLinks() {
-                  const date = datePicker.value;
-                  if (date) {
-                     breakfastLink.href =    `FoodList2.php?meal=Breakfast&date=${encodeURIComponent(date)}`;
-                     lunchLink.href =        `FoodList2.php?meal=Lunch&date=${encodeURIComponent(date)}`;
-                     dinnerLink.href =       `FoodList2.php?meal=Dinner&date=${encodeURIComponent(date)}`;
-                     snackLink.href =        `FoodList2.php?meal=Snack / Others&date=${encodeURIComponent(date)}`;
-                  } else {
-                     
-                  }
-               }
-
-               datePicker.addEventListener("change", updateLinks);
-            });
-
+            // Attach event listeners to the links
+            document.getElementById('breakfastLink').addEventListener('click', handleLinkClick);
+            document.getElementById('lunchLink').addEventListener('click', handleLinkClick);
+            document.getElementById('dinnerLink').addEventListener('click', handleLinkClick);
+            document.getElementById('snackLink').addEventListener('click', handleLinkClick);
             
-
             
+ 
          </script>
       </body>
 </html>
