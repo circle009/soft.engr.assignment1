@@ -9,11 +9,12 @@
 
    $userlog = $user['account_id'];
    $datepicked = date('Y-m-d');
+
    
    $query = "
-         SELECT * FROM meal
-         LEFT JOIN food_list ON food_list.foodID = meal.foodID
-         WHERE meal.account_ID = '$userlog' AND meal_date = '$datepicked'
+      SELECT * FROM meal
+      LEFT JOIN food_list ON food_list.foodID = meal.foodID
+      WHERE meal.account_ID = '$userlog' AND meal_date = '$datepicked'
         ";
 
    $stmt = $conn->prepare($query);
@@ -21,7 +22,7 @@
    $meal = $stmt->fetchAll(PDO::FETCH_ASSOC);
    $_SESSION['foodlist'] = $meal;
 
-
+   
   
 
 ?>
@@ -85,11 +86,11 @@
 
 
             <div class="container-mid">
-               
+
                <div class="container2" id="container2">
                   <form id="dateForm" action="" method="POST">
                      <input type="date" id="datePicker" name="datePicker">
-                  </form>   
+                  </form> 
                </div>
                <!-- <a>adasda</a> -->
                <table>
@@ -98,7 +99,7 @@
                         <th>No.</th>
                         <th>Food Name</th>
                         <th>Meal Type</th>
-                        <th>Calories</th>                        
+                        <th>Calories</th> 
                      </tr>
                   </thead>
                   <tbody>
@@ -110,7 +111,7 @@
                            <td><?= $counter ?></td>
                            <td><?= $meals['food'] ?></td>
                            <td><?= $meals['meal'] ?></td>
-                           <td><?= $meals['calories'] ?></td>                           
+                           <td><?= $meals['calories'] ?></td> 
                         </tr>
                      <?php $counter++; // Increment the counter
                         endforeach;
@@ -124,6 +125,7 @@
          
 
          <script>
+
             // Get today's date in yyyy-mm-dd format
             const today = new Date().toISOString().split('T')[0];
             // Set the value of the date input to today's date
@@ -138,7 +140,7 @@
                const clickedLink = event.target;
                const meal = clickedLink.textContent;
                clickedLink.href = `FoodList2.php?meal=${encodeURIComponent(meal)}&date=${encodeURIComponent(dateValue)}`;
-               
+
                // Navigate to the updated link
                window.location.href = clickedLink.href;
             }
@@ -149,16 +151,6 @@
             document.getElementById('dinnerLink').addEventListener('click', handleLinkClick);
             document.getElementById('snackLink').addEventListener('click', handleLinkClick);
             
-            const datePicker = document.getElementById('datePicker');
-
-        // Add an event listener for the 'change' event
-        datePicker.addEventListener('change', function() {
-            // Get the value of the date picker
-            const selectedDate = datePicker.value;
-            // Perform an action with the selected date
-            console.log('Selected date:', selectedDate);
-        });
- 
          </script>
       </body>
 </html>

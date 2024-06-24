@@ -1,29 +1,29 @@
 <?php
-    session_start();
-    if (!isset($_SESSION['user'])) {
-        header('location: Login.php');
-        exit;
-    }
-    if (isset($_GET['meal'])) {
-        $meal = $_GET['meal'];
-        $date = $_GET['date'];
-        
-    } else{
-        header('location: Meal.php');
-    }
+session_start();
+if (!isset($_SESSION['user'])) {
+    header('location: Login.php');
+    exit;
+}
+if (isset($_GET['meal'])) {
+    $meal = $_GET['meal'];
+    $date = $_GET['date'];
+    
+ } else{
+    header('location: Meal.php');
+ }
 
-    include('database/connection.php');
+include('database/connection.php');
 
-    try {
-        $query = "SELECT * FROM food_list";
-        $stmt = $conn->prepare($query);
-        $stmt->execute();
-        $foodlist = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $_SESSION['foodlist'] = $foodlist;
-    } catch (PDOException $e) {
-        $error_message = "Error fetching food list: " . $e->getMessage();
-        die($error_message);
-    }
+try {
+    $query = "SELECT * FROM food_list";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $foodlist = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $_SESSION['foodlist'] = $foodlist;
+} catch (PDOException $e) {
+    $error_message = "Error fetching food list: " . $e->getMessage();
+    die($error_message);
+}
 ?>
 
 <!DOCTYPE html>

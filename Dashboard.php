@@ -21,15 +21,31 @@
    $_SESSION['foodlist'] = $meal;
 
    $calories = 0;
+   $carbs = 0;
+   $protein = 0;
+   $fat = 0;
    foreach ($meal as $meals):
-      $total += $meals['calories']+0;  // Add the calories of each meal to the total
+      $calories += $meals['calories']+0;  // Add the calories of each meal to the total
+      $carbs += $meals['Carbohydrates']+0;  // Add the calories of each meal to the total
+      $protein += $meals['Protein']+0;  // Add the calories of each meal to the total
+      $fat += $meals['Fat']+0;  // Add the calories of each meal to the total
         // Display the calories for each meal
    endforeach;
-   echo $calories;
 
-   $carbs = 80;
-   $protein = 80;
-   $fat = 80;
+   $reqcalories   = 2000;
+   $reqcarbs      = $reqcalories * .40;
+   $reqprotein    = $reqcalories * .30;
+   $reqfat        = $reqcalories * .30;
+
+   $calories   = min((100 - (($reqcalories - $calories) /$reqcalories) *100),100);
+   $carbs      = min((100 - (($reqcarbs    - $carbs)    /$reqcarbs)    *100),100);
+   $protein    = min((100 - (($reqprotein  - $protein)  /$reqprotein)  *100),100);
+   $fat        = min((100 - (($reqfat      - $fat)      /$reqfat)      *100),100);
+   
+   // echo $carbs .'<br>';
+   // echo $protein .'<br>';
+   // echo $fat .'<br>';
+
 ?>
 
 <!DOCTYPE html>
@@ -48,16 +64,16 @@
 
          <div class="container-summary">
             <div class="welcome-header">
-               <p><b>Welcome back!</b></p>
+               <h2>Welcome back, <?php echo $user['fullname']; ?> !</h2>
             </div>
 
-            <p><b>Weekly Goal</b></p>
+            <!-- <p><b>Weekly Goal</b></p>
                <div class="pbar-border">
                   <div class="pbar-fill" style="background-color:#52FF00;width:20%"></div>
-               </div>
+               </div> -->
             <p><b>Daily Goal</b></p>
                <div class="pbar-border">
-                  <div class="pbar-fill" style="background-color: #717FFF; width: <?php echo $percentage; ?>%;"></div>
+                  <div class="pbar-fill" style="background-color: #717FFF; width: <?php echo $calories; ?>%;"></div>
                </div>
             <p><b>Calories</b></p>
                <div class="pbar-border">
